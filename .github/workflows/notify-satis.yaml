@@ -1,0 +1,18 @@
+  # Im Paket-Repo ablegen als: .github/workflows/notify-satis.yml
+  name: Notify Satis
+
+  on:
+    release:
+      types: [published]
+
+  jobs:
+    dispatch:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Trigger Satis rebuild
+          uses: peter-evans/repository-dispatch@v4
+          with:
+            token: ${{ secrets.ISW_FULL_TOKEN }}
+            repository: ideenstadtwerke/Pattr.Packages
+            event-type: satis-rebuild
+            client-payload: '{"repo": "${{ github.repository }}"}'
