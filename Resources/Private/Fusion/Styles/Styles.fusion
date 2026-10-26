@@ -1,4 +1,4 @@
-prototype(DIU.Neos.Content.Carousel:Styles) < prototype(Neos.Fusion:Array) {
+prototype(DIU.Neos.Content.Carousel:Styles) < prototype(Neos.Fusion:Join) {
     mainStyles = Neos.Fusion:Tag {
         tagName = 'link'
         attributes {

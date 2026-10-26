@@ -22,10 +22,10 @@ prototype(DIU.Neos.Content.Carousel:Cover) < prototype(Neos.Neos:ContentComponen
         backgroundClassLeft = ${q(node).property('backgroundColorLeft')}
         backgroundClassRight = ${q(node).property('backgroundColorRight')}
 
-        leftSide = Neos.Neos:PrimaryContent {
+        leftSide = Neos.Neos:ContentCollection {
             nodePath = 'leftSide'
         }
-        rightSide = Neos.Neos:PrimaryContent {
+        rightSide = Neos.Neos:ContentCollection {
             nodePath = 'rightSide'
         }
     }

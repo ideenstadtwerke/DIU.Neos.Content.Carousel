@@ -4,7 +4,7 @@
     "name": "diu/content-carousel",
     "require": {
         "neos/flow": "*",
-        "neos/neos": "*"
+        "neos/neos": "^9.0"
     },
     "extra": {
         "neos": {
