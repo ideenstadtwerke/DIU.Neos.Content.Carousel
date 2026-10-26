@@ -4,8 +4,8 @@ prototype(DIU.Neos.Content.Carousel:Carousel.Presentation) < prototype(Neos.Fusi
     navigation = null
 
     renderer = Neos.Fusion:Component {
-        sliderElements = Neos.Fusion:Collection {
-            collection = ${props.slides}
+        sliderElements = Neos.Fusion:Loop {
+            items = ${props.slides}
             itemName = 'node'
             itemRenderer = Neos.Fusion:Tag {
                 tagName = 'div'
@@ -36,7 +36,7 @@ prototype(DIU.Neos.Content.Carousel:Carousel.Presentation) < prototype(Neos.Fusi
 
         swiperClass = Neos.Fusion:Case {
             inBackend {
-                condition = ${node.context.inBackend}
+                condition = ${renderingMode.isEdit || renderingMode.isPreview}
                 renderer = 'swiper-backend-container'
             }
             inFrontend {
